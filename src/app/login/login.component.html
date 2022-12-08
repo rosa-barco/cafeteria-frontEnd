@@ -1,0 +1,47 @@
+<div class="row principal">
+    <div class="col-lg-8 user  form-register">
+        <h1>Nuevo Usuario</h1>
+        <form>
+            <div>
+                <div class="mb-3">
+                    <label for="user" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" placeholder="Ingresa tu Nombre" [(ngModel)]="registerForm.name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Correo</label>
+                    <input type="email" class="form-control"  placeholder="Ingresa tu contraseña" [(ngModel)]="registerForm.email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Contraseña de usuario</label>
+                    <input type="password" class="form-control" [(ngModel)]="registerForm.password" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Contraseña de administrador</label>
+                    <input type="password" class="form-control" name="pswd">
+                </div>             
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary add" (click)="register()">Enviar</button>
+                <button type="reset" class="btn btn-primary add">Cancelar</button>
+            </div>
+        </form>
+        <br>
+        {{mensaje | json}}
+    </div>
+    <div class="col-lg-4 sesion">
+        <h1><img src="./assets/medios/Logo.png" alt="DivinaCafetería"></h1>
+        <h1>Iniciar Sesión</h1>
+        <div class="mb-3 mt-3">
+            <label for="user" class="form-label">Correo</label>
+            <input type="text" class="form-control" id="user" placeholder="Ingresa tu usuario"  [(ngModel)]="email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Ingresa tu contraseña" [(ngModel)]="password" name="password">
+        </div>
+        <div class="botoni mb-3">
+            <button type="submit" class="btn btn-primary inn" (click)="login()">Ingresar</button>
+        </div>
+        {{ error | json}}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+export interface IReceta {
+  recetaId:number;
+  Nombre:string;
+  Precio:number;
+  Tipo:string;
+  Categoria:string;
+  Ingrediente1:string;
+  Cantidad1:number;
+  Ingrediente2:string;
+  Cantidad2:number;
+  Ingrediente3:string;
+  Cantidad3:number;
+  Ingrediente4:string;
+  Cantidad4:number;
+  Ingrediente5:string;
+  Cantidad5:number;
+  Ingrediente6:string;
+  Cantidad6:number;
+  Ingrediente7:string;
+  Cantidad7:number;
+  Ingrediente8:string;
+  Cantidad8:number;
+  ImagenUrl:string;
+}

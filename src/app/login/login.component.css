@@ -1,0 +1,54 @@
+.sesion{
+    background-color: #68927a;
+    color: #eaefee;
+    padding: 40px;
+}
+
+.user{
+    background-color: #eaefee;
+    color: #191b1a;
+    padding: 40px;
+}
+
+img{
+    width: 67%;
+    margin-bottom: 40px;
+    background-color: #eaefee;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.add{
+    background-color: #68927a;
+    margin-right: 10px;
+    margin-top: 20px;
+    border: none;
+    width: 25%;
+}
+
+.add:hover{
+    background-color: #49392C;
+    color: #eaefee;
+    border: none;
+}
+
+.inn{
+    background-color: #eaefee;
+    color: #191b1a;
+    border: none;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.inn:hover{
+    background-color: #49392C;
+    color: #eaefee;
+}
+
+.row{
+    width: 101%;
+}
+
+.botoni{
+    text-align: center;
+}

@@ -1,0 +1,134 @@
+.principal{
+    height: 530px;
+}
+
+.ingredientes{
+    background-color: #68927a;
+    color: #eaefee;
+    padding: 40px;
+    text-align: center;
+}
+
+.recetas{
+    background-color: #eaefee;
+    color: #191b1a;
+    padding: 40px;
+}
+
+.row{
+    width: 101%;
+}
+
+img{
+    width: 100%;
+}
+
+.holi{
+    height: 450px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.hi{
+    text-align: right;
+}
+
+h6{
+    height: 50px;
+    margin-top: 5px;
+}
+
+.tarjeta{
+    text-align: center;
+    background-color: #CCCAB1;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    width: 32%;
+}
+
+.btn{
+    background-color: #68927a;
+    border-color: #68927a;
+    color: #eaefee;
+}
+
+.btn:hover{
+    background-color: #49392C;
+    border-color: #49392C;
+    color: #eaefee;
+}
+
+.btt{
+    background-color: #49392C;
+    border-color: #49392C;
+    color: #eaefee;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btt:hover{
+    background-color: #eaefef;
+    border-color: #eaefef;
+    color: #49392C;
+}
+
+th{
+    background-color: #68927a;
+    text-align: center;
+}
+
+table{
+    border: #49392C;
+    text-align: center;
+    vertical-align: middle;
+    color: #191b1a;
+}
+
+td{
+    color: #191b1a;
+}
+
+.tt{
+    text-align: center;
+    color: #eaefef;
+}
+
+.hey{
+    text-align: right;
+}
+
+.latabla{
+    background-color: #eaefef;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #191b1a;
+    text-align: left;
+}
+
+h5{
+    text-align: center;
+}
+
+img{
+    width: 25px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+h3{
+    display: inline-block;
+}
+
+.titulo{
+    text-align: center;
+    margin-top: -20px;
+}
+
+.venta{
+    text-align: left;
+}

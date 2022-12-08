@@ -1,0 +1,100 @@
+<div class="row principal">
+    <div class="col-lg-7 recetas">
+        <div class="row centro"> <!-- Datos -->
+            <p class="col-lg-4"><b>Usuario:</b> {{userP.name }}</p>
+            <p class="col-lg-4"><b>Fecha:</b> {{CurrentDate | date:'dd-MM-yyyy'}}</p>
+            <p class="col-lg-4"><b>Hora:</b> {{CurrentDate | date:'HH:mm'}}</p>
+        </div>
+        <hr>
+        <div class="row"> <!-- Filtros -->
+            <form>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Filtros</h4>
+                    </div>
+                    <div class="col-lg-6 hi">
+                        <button type="reset" class="btn btn-primary">Borrar Filtro</button>
+                    </div>
+                    <div class="col-lg-4 form-check">
+                        <label class="form-label"><b>Categoría</b></label><br>
+                        <input class="form-check-input" type="radio" id="tipoF" name="Tipo" value="Frío" [(ngModel)]="listFilter">
+                        <label class="form-check-label" for="tipoF">Frío</label><br>
+                        <input class="form-check-input" type="radio" id="tipoC" name="Tipo" value="Caliente" [(ngModel)]="listFilter">
+                        <label class="form-check-label" for="tipoC">Caliente</label>
+                    </div>
+                    <div class="col-lg-4 form-check">
+                        <label class="form-label"><b>Tipo</b></label><br>
+                        <input class="form-check-input"  type="radio" id="catC" name="Categoria" value="Café" [(ngModel)]="catFilter">
+                        <label class="form-check-label" for="catC">Café</label><br>
+                        <input class="form-check-input"  type="radio" id="catT" name="Categoria" value="Té" [(ngModel)]="catFilter">
+                        <label class="form-check-label" for="catT">Té</label>
+                    </div>
+                    <div class="col-lg-4 mb-3 mt-3">
+                        <label class="form-label"><b>Nombre</b></label>
+                        <input class="form-control" type="text" name="filter" [(ngModel)]="nomFilter">
+                    </div>
+                </div>               
+            </form>
+        </div>
+        <hr>
+        <div> <!-- Productos -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Bebidas</h4>
+                </div>
+            </div>
+            <div class="row overflow-auto holi">
+                <div class="col-lg-4 tarjeta" *ngFor="let inicio of inici | recetasFiltro: listFilter | categoriasFiltro: catFilter | nombreFiltro: nomFilter">
+                    <img [src]="inicio.ImagenUrl" [title]="inicio.nombre">
+                    <h6>{{inicio.nombre}}</h6>
+                    <p>${{inicio.precio}}.00</p>
+                    <button class="btn btn-primary" (click)="addToList(inicio)">Agregar</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 ingredientes holi2">
+        <div class="latabla overflow-auto tablilla"> <!-- Tabla de pedidos -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prod of selectProductos">
+                        <td>{{prod.nombre}}</td>
+                        <td>{{prod.precio}}</td>
+                        <td>{{prod.Tipo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="latabla"> <!-- Total a pagar -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No. Artículos</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{counter}}</td>
+                        <td>{{total}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row"> <!-- Botones -->
+            <div class="col-lg-6">
+                <button class="btn btn-primary btt" (click)="sendPedido()">Pagar</button>                
+            </div>
+            <div class="col-lg-6">
+                <button class="btn btn-primary btt" (click)="clearPedido()" >Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

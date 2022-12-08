@@ -1,0 +1,45 @@
+<div class="row principal">
+    <div class="col-lg-7 recetas">
+        <div class="titulo"> <!-- Titulo -->
+            <img src="./assets/icon/usuario-hover.png" alt="">
+            <h3>Registro de usuarios</h3>
+            <img src="./assets/icon/usuario-hover.png" alt="">
+        </div>
+        <div class="row overflow-auto holi"> <!-- Tabla -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of listProductos">
+                        <td>{{producto.name}}</td>
+                        <td>{{producto.email}}</td>                            
+                        <td><button class="btn btn-primary btn" (click)="selectIngrediente(producto)">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-5 ingredientes holi2"> <!-- Editar -->
+        <div>
+            <h2>Editar</h2>
+            <div class="latabla">
+                <div class="mb-3">
+                    <label for="pwd" class="form-label text-black">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="form.name"  placeholder="" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label text-black">Correo</label>
+                    <input type="text" class="form-control"  [(ngModel)]="form.email" placeholder="" name="unidadTotal" required>
+                </div>    
+            </div>
+            <div>
+                <button class="btn btn-primary btt" (click)="handleUpdate()">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>

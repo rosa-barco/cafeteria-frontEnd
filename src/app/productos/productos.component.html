@@ -1,0 +1,57 @@
+<div class="row principal">
+    <div class="col-lg-7 recetas">
+        <div>
+            <div class="titulo"> <!-- Titulo -->
+                <img src="./assets/icon/productos-hover.png" alt="">
+                <h3>Registro de Ingredientes</h3>
+                <img src="./assets/icon/productos-hover.png" alt="">
+            </div>
+            <div class="row overflow-auto holi">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Porción</th>
+                            <th>Precio</th>
+                            <th>Tipo</th>
+                            <th>Disponible</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let producto of listProductos">
+                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.porcion}}</td>
+                            <td>${{producto.precio}}</td>
+                            <td>{{producto.tipoIngrediente}}</td>
+                            <td>{{producto.unidadTotal}}</td>
+                            <td>
+                                <button class="btn btn-primary btn" (click)="selectIngrediente(producto)">Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 ingredientes holi2">
+        <h2 class="">Editar</h2>
+        <div class="latabla">
+            <div class="mb-3">
+                <label for="pwd" class="form-label text-black">Nombre</label>
+                <input type="text" class="form-control" [(ngModel)]="form.nombre"  placeholder="" name="nombre" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label text-black">Precio de compra ($)</label>
+                <input type="text" class="form-control"  [(ngModel)]="form.precio" placeholder="" name="precio">
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label text-black">Unidades disponible</label>
+                <input type="text" class="form-control"  [(ngModel)]="form.unidadTotal" placeholder="" name="unidadTotal">
+            </div>
+        </div>       
+        <div>
+            <button class="btn btn-primary btt" (click)="handleUpdate()">Editar</button>  
+        </div>    
+    </div>
+</div>

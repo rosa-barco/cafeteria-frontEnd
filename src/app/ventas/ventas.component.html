@@ -1,0 +1,33 @@
+<div class="row principal">
+    <div class="col-lg-12 recetas">
+        <div>
+            <div class="titulo"> <!-- Titulo -->
+                <img src="./assets/icon/ventas-hover.png" alt="">
+                <h3>Registro de Ventas</h3>
+                <img src="./assets/icon/ventas-hover.png" alt="">
+            </div>
+            <div class="row overflow-auto holi">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Costo Total</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let venta of listaVentas">
+                            <td>{{venta.fecha | date: 'dd/MM/yyyy'}}</td>
+                            <td>${{venta.total}}.00</td>
+                            <td class="venta"> 
+                                <ul>
+                                    <li *ngFor="let prod of venta.productos">Nombre: {{prod.nombre}} | Precio: ${{prod.precio}}</li>
+                                </ul> 
+                            </td>        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
